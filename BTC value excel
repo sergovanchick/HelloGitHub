@@ -1,0 +1,17 @@
+BTC value =IF THERE is AN ERROR((J14/K14)/M14;"Leverage value < 1")
+
+Times in/out =IF(I14="Long";(L14-K14)/L14;(K14-L14)/K14)
+
+Different in/out =IF THERE IS AN ERROR(N14*O14*M14;"Shoulder value < 1")
+
+Approx/UB BTC =IF THERE is AN ERROR(N14*O14*M14;"Leverage value < 1")
+
+Approx/ub $ =IF THERE IS AN ERROR(IF(I 14="Long";P 14*L 14;P 14*K 14);"Shoulder value < 1")
+
+ROE =O14*M14
+
+Elimination =IF THERE IS AN ERROR(IF(I 14="Long";(K14-(K14/(M14+1)))+(K14-(K14/(M14+1)))*0,005;(K14+(K14/(M14-1)))-(K14+(K14/(M14-1)))*0,005);"No liquid")
+
+Delta % =IF THERE IS AN ERROR(IF(I 14="Long";(K14-S14)/K 14;(S14K14)/S14);"No value")
+
+Delta $ =IF THERE IS AN ERROR(IF(I 14="Long";(K14-S14);(S14-K14));"There is no sign")
